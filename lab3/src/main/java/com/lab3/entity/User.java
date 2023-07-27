@@ -1,15 +1,17 @@
 package com.lab3.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
 
 @Entity
 @Getter
 @Setter
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String email;
@@ -17,4 +19,9 @@ public class User {
     private String firstName;
     private String lastname;
 
-}
+    @OneToMany(mappedBy = "user")
+    private List<Review> reviews;
+
+    @OneToOne(mappedBy = "user")
+    private Address address;
+};
