@@ -25,7 +25,6 @@ public class ProductService {
         List<ProductDto> productDtoList = new ArrayList<>();
         entities.forEach(entity ->{
             ProductDto dto = mapper.map(entity, ProductDto.class);
-            System.out.println(dto.getCategory());
             productDtoList.add(dto);
         });
 

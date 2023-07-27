@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 import java.util.List;
 
@@ -17,6 +19,7 @@ public class Product {
     private double price;
 
     @ManyToOne()
+//    @Fetch(FetchMode.JOIN)
     private Category category;
 
     @OneToMany(mappedBy = "product")
