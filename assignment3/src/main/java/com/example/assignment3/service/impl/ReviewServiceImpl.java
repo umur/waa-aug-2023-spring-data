@@ -1,6 +1,7 @@
 package com.example.assignment3.service.impl;
 
 import com.example.assignment3.dto.ReviewDto;
+import com.example.assignment3.dto.ReviewUpdateDto;
 import com.example.assignment3.dto.UserDto;
 import com.example.assignment3.entity.Review;
 import com.example.assignment3.entity.User;
@@ -58,6 +59,13 @@ public class ReviewServiceImpl implements ReviewService {
         });
         return reviewDtoList;
 
+    }
+
+    public ReviewDto update(int id, ReviewUpdateDto reviewUpdateDto){
+        Review review = reviewRepo.findById(id).get();
+        review.setComment(reviewUpdateDto.getComment());
+        reviewRepo.save(review);
+        return modelMapper.map(review, ReviewDto.class);
     }
 
 

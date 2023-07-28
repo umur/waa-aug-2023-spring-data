@@ -1,5 +1,6 @@
 package com.example.assignment3.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -19,11 +20,9 @@ public class Address {
 
     String Street;
     String city;
-    int zip;
+    Integer zip;
 
     @JoinColumn
     @OneToOne
-//    @Fetch(FetchMode.JOIN)
-            @JsonIgnore
     User user;
 }

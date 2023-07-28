@@ -6,10 +6,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class AddressDto {
+public class AddressUpdateDto {
     int id;
     String Street;
     String city;
     Integer zip;
-    User user;
 }

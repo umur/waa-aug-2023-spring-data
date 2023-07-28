@@ -1,15 +1,13 @@
 package com.example.assignment3.dto;
 
+import com.example.assignment3.entity.Product;
 import com.example.assignment3.entity.User;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
-public class AddressDto {
+public class ReviewUpdateDto {
     int id;
-    String Street;
-    String city;
-    Integer zip;
-    User user;
+    String comment;
 }

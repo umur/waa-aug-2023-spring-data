@@ -3,10 +3,7 @@ package com.example.assignment3.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Fetch;
@@ -25,12 +22,11 @@ public class Product {
     int price;
 
     @OneToMany(mappedBy = "product")
-    @JsonIgnore
+    @JsonManagedReference
     List<Review> reviews;
 
-    @Fetch(FetchMode.JOIN)
     @ManyToOne
-    @JsonIgnore
+    @JsonManagedReference
     Category category;
 
 }

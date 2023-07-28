@@ -1,6 +1,7 @@
 package com.example.assignment3.service;
 
 import com.example.assignment3.dto.ProductDto;
+import com.example.assignment3.dto.ProductUpdateDto;
 import com.example.assignment3.entity.Product;
 
 import java.util.List;
@@ -19,6 +20,8 @@ public interface ProductService {
     List<ProductDto> findAllByCategoryAndPriceLessThan(int catId, int maxPrice);
 
     List<ProductDto> findAllByNameContains(String str);
+
+    ProductDto update(int id, ProductUpdateDto productUpdateDto);
 
 
 }

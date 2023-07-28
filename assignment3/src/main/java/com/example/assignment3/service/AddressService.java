@@ -2,6 +2,7 @@ package com.example.assignment3.service;
 
 
 import com.example.assignment3.dto.AddressDto;
+import com.example.assignment3.dto.AddressUpdateDto;
 
 import java.util.List;
 
@@ -19,5 +20,7 @@ public interface AddressService {
     void delete(int id);
 
     //Update address
-    void update(int id, AddressDto addressDto);
+    AddressDto update(int id, AddressUpdateDto addressDto);
+
+
 }

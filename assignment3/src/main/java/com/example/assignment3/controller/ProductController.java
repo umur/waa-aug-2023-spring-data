@@ -2,8 +2,10 @@ package com.example.assignment3.controller;
 
 import com.example.assignment3.dto.CategoryDto;
 import com.example.assignment3.dto.ProductDto;
+import com.example.assignment3.dto.ProductUpdateDto;
 import com.example.assignment3.service.ProductService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,8 +22,9 @@ public class ProductController {
     }
 
     @PostMapping
-    public void save(@RequestBody ProductDto studentDto){
-        productService.save(studentDto);
+    public ResponseEntity<ProductDto> save(@RequestBody ProductDto productDto){
+        productService.save(productDto);
+        return ResponseEntity.ok().body(productDto);
     }
 
     @GetMapping("/{id}")
@@ -30,8 +33,9 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable int id){
+    public ResponseEntity<String> delete(@PathVariable int id){
         productService.delete(id);
+        return ResponseEntity.ok().body("Delete Successful");
     }
 
     @GetMapping("/findByMinPrice")
@@ -45,7 +49,13 @@ public class ProductController {
     }
 
     @GetMapping("/findAllByNameContains")
-    List<ProductDto> findAllByNameContains(@RequestParam String str){
-        return productService.findAllByNameContains(str);
+    public List<ProductDto> findAllByNameContains(@RequestParam String name){
+        return productService.findAllByNameContains(name);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<ProductDto> update(@PathVariable int id, @RequestBody ProductUpdateDto productUpdateDto){
+        ProductDto productDto = productService.update(id, productUpdateDto);
+        return ResponseEntity.ok().body(productDto);
     }
 }

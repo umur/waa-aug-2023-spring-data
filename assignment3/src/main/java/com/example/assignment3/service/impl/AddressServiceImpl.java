@@ -1,6 +1,7 @@
 package com.example.assignment3.service.impl;
 
 import com.example.assignment3.dto.AddressDto;
+import com.example.assignment3.dto.AddressUpdateDto;
 import com.example.assignment3.entity.Address;
 import com.example.assignment3.repository.AddressRepo;
 import com.example.assignment3.service.AddressService;
@@ -45,7 +46,15 @@ public class AddressServiceImpl implements AddressService {
     }
 
     @Override
-    public void update(int id, AddressDto addressDto){
-        //addressRepo.
+    public AddressDto update(int id, AddressUpdateDto addressDto){
+        Address address = addressRepo.findById(id).get();
+        if(addressDto.getStreet()!=null)
+            address.setStreet(addressDto.getStreet());
+        if(addressDto.getCity()!=null)
+            address.setCity(addressDto.getCity());
+        if(addressDto.getZip()!=null)
+            address.setZip(addressDto.getZip());
+        addressRepo.save(address);
+        return modelMapper.map(address, AddressDto.class);
     }
 }

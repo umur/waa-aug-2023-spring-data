@@ -1,10 +1,8 @@
 package com.example.assignment3.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,10 +16,10 @@ public class Review {
     String comment;
 
     @ManyToOne
-    @JsonIgnore
+    @JsonBackReference
     User user;
 
     @ManyToOne
-    @JsonIgnore
+    @JsonBackReference
     Product product;
 }

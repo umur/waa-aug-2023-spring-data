@@ -2,6 +2,7 @@ package com.example.assignment3.service.impl;
 
 import com.example.assignment3.dto.CategoryDto;
 import com.example.assignment3.dto.ProductDto;
+import com.example.assignment3.dto.ProductUpdateDto;
 import com.example.assignment3.entity.Category;
 import com.example.assignment3.entity.Product;
 import com.example.assignment3.repository.ProductRepo;
@@ -76,6 +77,16 @@ public class ProductServiceImpl implements ProductService {
             productDtoList.add(dto);
         });
         return productDtoList;
+    }
+
+    public ProductDto update(int id, ProductUpdateDto productUpdateDto){
+        Product product = productRepo.findById(id).get();
+        if(productUpdateDto.getName()!=null)
+            product.setName(productUpdateDto.getName());
+        if(productUpdateDto.getPrice()!=product.getPrice())
+            product.setPrice(productUpdateDto.getPrice());
+        productRepo.save(product);
+        return modelMapper.map(product, ProductDto.class);
     }
 
 

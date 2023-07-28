@@ -2,8 +2,10 @@ package com.example.assignment3.controller;
 
 import com.example.assignment3.dto.UserDto;
 
+import com.example.assignment3.dto.UserUpdateDto;
 import com.example.assignment3.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,12 +27,20 @@ public class UserController {
     }
 
     @PostMapping
-    public void save(@RequestBody UserDto userDto) {
+    public ResponseEntity<UserDto> save(@RequestBody UserDto userDto) {
         userService.save(userDto);
+        return ResponseEntity.ok().body(userDto);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable int id) {
+    public ResponseEntity<String> delete(@PathVariable int id) {
         userService.delete(id);
+        return ResponseEntity.ok().body("Delete Successful");
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<UserDto> update(@PathVariable int id, @RequestBody UserUpdateDto userUpdateDto){
+       UserDto userDto =  userService.update(id, userUpdateDto);
+       return ResponseEntity.ok().body(userDto);
     }
 }

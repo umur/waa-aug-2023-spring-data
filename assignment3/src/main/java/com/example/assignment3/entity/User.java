@@ -1,10 +1,9 @@
 package com.example.assignment3.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,6 +24,8 @@ public class User {
 
 
     @OneToMany(mappedBy = "user")
-    @JsonIgnore
+    @JsonBackReference
     List<Review> reviews;
+
+
 }

@@ -2,6 +2,7 @@ package com.example.assignment3.service.impl;
 
 import com.example.assignment3.dto.AddressDto;
 import com.example.assignment3.dto.CategoryDto;
+import com.example.assignment3.dto.CategoryUpdateDto;
 import com.example.assignment3.entity.Address;
 import com.example.assignment3.entity.Category;
 import com.example.assignment3.repository.CategoryRepo;
@@ -46,6 +47,16 @@ public class CategoryServiceImpl implements CategoryService {
     @Override
     public void delete(int id){
         categoryRepo.deleteById(id);
+    }
+
+    @Override
+    public CategoryDto update(int id, CategoryUpdateDto categoryDto){
+        Category category = categoryRepo.findById(id).get();
+        if(categoryDto.getName()!=null){
+            category.setName(categoryDto.getName());
+        }
+        categoryRepo.save(category);
+        return modelMapper.map(category,CategoryDto.class);
     }
 
 
