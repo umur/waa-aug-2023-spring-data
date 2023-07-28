@@ -1,0 +1,396 @@
+{
+	"info": {
+		"_postman_id": "1c285fd3-cdf9-4760-86c1-4b5b501fe71e",
+		"name": "Lab3 Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27520380"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8100/products/byminprice?minPrice=26",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/products/byminprice?minPrice=26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"products",
+						"byminprice"
+					],
+					"query": [
+						{
+							"key": "minPrice",
+							"value": "26"
+						}
+					]
+				},
+				"description": "getProductGreaterThanMinPrice"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8100/products/byminprice?minPrice=26",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8100/products/byminprice?minPrice=26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"products",
+								"byminprice"
+							],
+							"query": [
+								{
+									"key": "minPrice",
+									"value": "26"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jul 2023 04:30:39 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"productId\": 1,\n        \"name\": \"Laptop\",\n        \"price\": 1200,\n        \"rating\": \"4.5\"\n    },\n    {\n        \"productId\": 3,\n        \"name\": \"Phone\",\n        \"price\": 800,\n        \"rating\": \"4.2\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8100/products/bycategoryandmaxprice?categoryName=electronics&maxPrice=1000",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/products/bycategoryandmaxprice?categoryName=electronics&maxPrice=1000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"products",
+						"bycategoryandmaxprice"
+					],
+					"query": [
+						{
+							"key": "categoryName",
+							"value": "electronics"
+						},
+						{
+							"key": "maxPrice",
+							"value": "1000"
+						}
+					]
+				},
+				"description": "getProductBycategoryandMaxPrice"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8100/products/bycategoryandmaxprice?categoryName=electronics&maxPrice=1000",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8100/products/bycategoryandmaxprice?categoryName=electronics&maxPrice=1000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"products",
+								"bycategoryandmaxprice"
+							],
+							"query": [
+								{
+									"key": "categoryName",
+									"value": "electronics"
+								},
+								{
+									"key": "maxPrice",
+									"value": "1000"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jul 2023 04:32:02 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"productId\": 3,\n        \"name\": \"Phone\",\n        \"price\": 800,\n        \"rating\": \"4.2\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8100/products/byproductkeyword?keyword=lap",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/products/byproductkeyword?keyword=lap",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"products",
+						"byproductkeyword"
+					],
+					"query": [
+						{
+							"key": "keyword",
+							"value": "lap"
+						}
+					]
+				},
+				"description": "getProductByKeyWord"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8100/products/byproductkeyword?keyword=lap",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8100/products/byproductkeyword?keyword=lap",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"products",
+								"byproductkeyword"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "lap"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jul 2023 04:32:44 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"productId\": 1,\n        \"name\": \"Laptop\",\n        \"price\": 1200,\n        \"rating\": \"4.5\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8100/reviews/byproductid/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/reviews/byproductid/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"reviews",
+						"byproductid",
+						"1"
+					]
+				},
+				"description": "getReviewByProductId"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8100/reviews/byproductid/1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8100/reviews/byproductid/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"reviews",
+								"byproductid",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jul 2023 04:33:30 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"reviewId\": 1,\n        \"comment\": \"Great product!\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8100/users/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8100/users/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8100",
+					"path": [
+						"users",
+						"1"
+					]
+				},
+				"description": "getUsersById"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8100/users/1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8100/users/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 28 Jul 2023 04:35:02 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userId\": 1,\n    \"email\": \"john@example.com\",\n    \"password\": \"password123\",\n    \"firstName\": \"John\",\n    \"lastName\": \"Doe\",\n    \"reviewList\": [\n        {\n            \"id\": 1,\n            \"comment\": \"Great product!\"\n        },\n        {\n            \"id\": 3,\n            \"comment\": \"Good quality.\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
