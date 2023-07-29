@@ -1,0 +1,777 @@
+{
+	"info": {
+		"_postman_id": "f2d787bf-47dd-4904-a0f8-9a9d61cfc999",
+		"name": "HibernatesDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6198392"
+	},
+	"item": [
+		{
+			"name": "ASolution",
+			"item": [
+				{
+					"name": "products in category and cost less than maxPrice Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products/filter/Category1?maxPrice=20",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"filter",
+								"Category1"
+							],
+							"query": [
+								{
+									"key": "maxPrice",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products that contain keyword Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products/search/abc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"search",
+								"abc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products that cost more than minprice Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products/filter?minPrice=10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "minPrice",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reviews of the product whose id Copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/reviews/product/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews",
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "GetallProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products in category and cost less than maxPrice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products/filter/Category1?maxPrice=20",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"filter",
+								"Category1"
+							],
+							"query": [
+								{
+									"key": "maxPrice",
+									"value": "20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products that contain keyword",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products/search/abc",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"search",
+								"abc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products that cost more than minprice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products/filter?minPrice=10",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "minPrice",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 6,\n    \"name\": \"Product 5\",\n    \"rating\": 4,\n    \"price\": 22,\n    \"category\": {\n        \"id\": 1,\n        \"comment\": \"anything\"\n    }\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/products",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 123,\n    \"firstName\": \"firstName1\",\n    \"lastName\": \"lastName1\",\n    \"email\":\"email1\",\n    \"major\":\"major1\",\n    \"coursesTaken\":[]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/products/123",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products/123",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/products/124353",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"products",
+								"124353"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Address",
+			"item": [
+				{
+					"name": "GetallAddres",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/address",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateAddress",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1234,\n    \"firstName\": \"firstName\",\n    \"lastName\": \"lastName\",\n    \"email\":\"email\",\n    \"major\":\"major\",\n    \"coursesTaken\":[{\n    \"id\": 1234,\n    \"name\": \"WAAa\",\n    \"code\": \"CS1234s\"\n},{\n    \"id\": 1235,\n    \"name\": \"WAAa\",\n    \"code\": \"CS1234s\"\n}]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/address",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateAddress",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 123,\n    \"firstName\": \"firstName1\",\n    \"lastName\": \"lastName1\",\n    \"email\":\"email1\",\n    \"major\":\"major1\",\n    \"coursesTaken\":[]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/address/123",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteAddress",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/address/123",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/address/124353",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"address",
+								"124353"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "GetallCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1234,\n    \"firstName\": \"firstName\",\n    \"lastName\": \"lastName\",\n    \"email\":\"email\",\n    \"major\":\"major\",\n    \"coursesTaken\":[{\n    \"id\": 1234,\n    \"name\": \"WAAa\",\n    \"code\": \"CS1234s\"\n},{\n    \"id\": 1235,\n    \"name\": \"WAAa\",\n    \"code\": \"CS1234s\"\n}]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 123,\n    \"firstName\": \"firstName1\",\n    \"lastName\": \"lastName1\",\n    \"email\":\"email1\",\n    \"major\":\"major1\",\n    \"coursesTaken\":[]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/categories/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/categories/123",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/categories/124353",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"categories",
+								"124353"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "GetallReview",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/reviews",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reviews of the product whose id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/reviews/product/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews",
+								"product",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateReview",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1234,\n    \"firstName\": \"firstName\",\n    \"lastName\": \"lastName\",\n    \"email\":\"email\",\n    \"major\":\"major\",\n    \"coursesTaken\":[{\n    \"id\": 1234,\n    \"name\": \"WAAa\",\n    \"code\": \"CS1234s\"\n},{\n    \"id\": 1235,\n    \"name\": \"WAAa\",\n    \"code\": \"CS1234s\"\n}]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/reviews",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateReview",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 123,\n    \"firstName\": \"firstName1\",\n    \"lastName\": \"lastName1\",\n    \"email\":\"email1\",\n    \"major\":\"major1\",\n    \"coursesTaken\":[]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/reviews/123",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteReview",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/reviews/123",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/reviews/124353",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reviews",
+								"124353"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "users",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1234,\n    \"firstName\": \"firstName\",\n    \"lastName\": \"lastName\",\n    \"email\":\"email\",\n    \"major\":\"major\",\n    \"coursesTaken\":[{\n    \"id\": 1234,\n    \"name\": \"WAAa\",\n    \"code\": \"CS1234s\"\n},{\n    \"id\": 1235,\n    \"name\": \"WAAa\",\n    \"code\": \"CS1234s\"\n}]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 123,\n    \"firstName\": \"firstName1\",\n    \"lastName\": \"lastName1\",\n    \"email\":\"email1\",\n    \"major\":\"major1\",\n    \"coursesTaken\":[]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/users/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/users/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
