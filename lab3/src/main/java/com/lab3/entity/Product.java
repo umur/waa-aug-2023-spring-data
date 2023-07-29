@@ -12,7 +12,6 @@ import java.util.List;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
@@ -22,8 +21,7 @@ public class Product {
     @JoinColumn(name="category_id")
     private Category category;
 
-    @OneToMany
-    @JoinColumn(name="product_id")
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Review> reviews;
 
 };

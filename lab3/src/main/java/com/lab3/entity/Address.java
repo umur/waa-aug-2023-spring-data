@@ -9,14 +9,13 @@ import lombok.Setter;
 @Entity
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String street;
     private String city;
     private long zip;
 
-    @OneToOne
+    @OneToOne(mappedBy = "address")
     private User user;
 
 };
