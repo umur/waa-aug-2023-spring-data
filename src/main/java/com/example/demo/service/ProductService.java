@@ -12,4 +12,8 @@ public interface ProductService {
     void update(ProductDto productDto, int id);
 
     void delete(int id);
+
+    List<ProductDto> findByPriceGreaterThan(Double minPrice);
+    List<ProductDto> findByCategoryNameAndPriceLessThan(String categoryName, Double maxPrice);
+    List<ProductDto> findByNameContainingIgnoreCase(String keyword);
 }

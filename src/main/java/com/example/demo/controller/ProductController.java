@@ -19,6 +19,22 @@ public class ProductController {
         productService.save(productDto);
     }
 
+    @GetMapping("/filter")
+    public ResponseEntity<List<ProductDto>> findProductsByMinPrice(@RequestParam("minPrice") Double minPrice) {
+        return ResponseEntity.ok(productService.findByPriceGreaterThan(minPrice));
+    }
+
+    @GetMapping("/filter/{categoryName}")
+    public ResponseEntity<List<ProductDto>> findProductsByCategoryAndMaxPrice(@PathVariable String categoryName,
+                                                           @RequestParam("maxPrice") Double maxPrice) {
+        return ResponseEntity.ok(productService.findByCategoryNameAndPriceLessThan(categoryName, maxPrice));
+    }
+
+    @GetMapping("/search/{keyword}")
+    public ResponseEntity<List<ProductDto>> findProductsByKeyword(@PathVariable String keyword) {
+        return ResponseEntity.ok(productService.findByNameContainingIgnoreCase(keyword));
+    }
+
     @GetMapping
     public ResponseEntity<List<ProductDto>> getAll(){
         List<ProductDto> productDtoList = productService.getAll();
@@ -40,6 +56,11 @@ public class ProductController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable int id){
         productService.delete(id);
+    }
+
+    @GetMapping("/products")
+    public ResponseEntity<List<ProductDto>> getProductsByMinPrice(@RequestParam double minPrice) {
+        return ResponseEntity.ok(productService.findByPriceGreaterThan(minPrice));
     }
 
 }

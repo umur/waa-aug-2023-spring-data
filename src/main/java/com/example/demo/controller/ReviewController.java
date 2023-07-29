@@ -14,6 +14,11 @@ public class ReviewController {
     @Autowired
     private ReviewService reviewService;
 
+    @GetMapping("/product/{productId}")
+    public ResponseEntity<List<ReviewDto>> findReviewsByProductId(@PathVariable Integer productId) {
+        return ResponseEntity.ok(reviewService.findByProductId(productId));
+    }
+
     @PostMapping
     public void save(@RequestBody ReviewDto reviewDto){
         reviewService.save(reviewDto);

@@ -12,4 +12,6 @@ public interface ReviewService {
     void update(ReviewDto reviewDto, int id);
 
     void delete(int id);
+
+    List<ReviewDto> findByProductId(Integer id);
 }

@@ -5,6 +5,7 @@ import com.example.demo.dto.AddressDto;
 import java.util.List;
 
 public interface AddressService {
+
     void save(AddressDto addressDto);
 
     public List<AddressDto> getAll();
