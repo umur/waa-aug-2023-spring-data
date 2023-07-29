@@ -34,6 +34,12 @@ public class ProductController {
     public List<ProductDto> getByKeyword(@PathVariable String keyword){
         return productService.getByNameContains(keyword);
     }
+    @GetMapping("/byCategoryMaxPrice")
+    public List<ProductDto> getProductsByCategoryAndPriceLessThan(@RequestParam int categoryId, int maxPrice){
+        System.out.println("in controller");
+        return productService.getProductsByCategoryAndPriceLessThan(categoryId,maxPrice);
+    }
+
 
     @PostMapping
     public void save(@RequestBody ProductDto dto){

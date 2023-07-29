@@ -8,7 +8,7 @@ import java.util.List;
 public interface UserService {
     List<UserDto> getAll();
     UserDto getById(int id);
-
+    public void delete(int id);
     void save(AddressDto dto);
 
 }

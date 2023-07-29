@@ -10,4 +10,5 @@ import java.util.List;
 public interface ProductRepo extends ListCrudRepository<Product,Integer> {
     List<Product> findByPriceGreaterThan(int minPrice);
     List<Product> findByNameContains(String keyword);
+    List<Product> findProductsByCategory_IdAndPriceLessThan(int categoryID,int maxPrice);
 }

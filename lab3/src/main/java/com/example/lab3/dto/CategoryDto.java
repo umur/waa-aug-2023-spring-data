@@ -3,6 +3,7 @@ package com.example.lab3.dto;
 import com.example.lab3.entity.Product;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 
 import java.util.List;
 @Getter

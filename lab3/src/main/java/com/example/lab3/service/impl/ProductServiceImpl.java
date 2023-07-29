@@ -73,5 +73,18 @@ public class ProductServiceImpl implements ProductService {
         return dtoList;
     }
 
+    @Override
+    public List<ProductDto> getProductsByCategoryAndPriceLessThan(int categoryId, int price) {
+        var entityList = productRepo.findProductsByCategory_IdAndPriceLessThan(categoryId, price);
+        var dtoList = new ArrayList<ProductDto>();
+        entityList.forEach(entity->{
+            var dto = modelMapper.map(entity, ProductDto.class);
+            dtoList.add(dto);
+        });
+        return dtoList;
+    }
+
+
+
 
 }

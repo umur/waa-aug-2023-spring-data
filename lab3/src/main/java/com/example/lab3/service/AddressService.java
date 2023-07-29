@@ -8,6 +8,6 @@ import java.util.List;
 public interface AddressService {
     List<AddressDto> getAll();
     AddressDto getById(int id);
-
+    public void delete(int id);
     void save(AddressDto dto);
 }

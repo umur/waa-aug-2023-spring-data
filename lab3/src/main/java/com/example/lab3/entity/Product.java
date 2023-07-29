@@ -1,5 +1,7 @@
 package com.example.lab3.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
@@ -20,9 +22,11 @@ public class Product {
     private int price ;
     private int rating;
 
+@JsonIgnore
     @ManyToOne
     private Category category;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "product")
     private List<Review>reviews;
 }

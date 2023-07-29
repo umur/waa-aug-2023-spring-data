@@ -8,6 +8,7 @@ import java.util.List;
 public interface ReviewService {
     List<ReviewDto> getAll();
     ReviewDto getById(int id);
-
+    public void delete(int id);
     void save(ReviewDto dto);
+    List<ReviewDto> getAllByProductId(int id);
 }

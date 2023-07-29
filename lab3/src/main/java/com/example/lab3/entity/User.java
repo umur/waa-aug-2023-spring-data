@@ -1,5 +1,6 @@
 package com.example.lab3.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -22,9 +23,10 @@ public class User {
     private String firstName;
     private String lastname;
 
+ @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<Review> review;
-
+ @JsonIgnore
     @OneToOne
     private Address address;
 
