@@ -3,6 +3,7 @@ package com.lab3.service.impl;
 import com.lab3.entity.User;
 import com.lab3.repository.UserRepository;
 import com.lab3.service.services.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class UserServiceImp implements UserService {
     @Autowired
     private  UserRepository userRepository;

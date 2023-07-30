@@ -1,5 +1,6 @@
 package com.lab3.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,17 +14,18 @@ public class User {
     @Id
     private int id;
 
+    private String firstName;
+    private String lastName;
     private String email;
     private String password;
-    private String firstName;
-    private String lastname;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private List<Review> reviews;
 
 
-    //does this need to have fetch type?
-    @OneToOne(fetch = FetchType.LAZY)
+
+    @OneToOne
     @JoinColumn(name = "address_id")
     private Address address;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Review> reviews;
 };

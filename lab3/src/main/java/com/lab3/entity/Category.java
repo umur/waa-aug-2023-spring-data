@@ -1,5 +1,6 @@
 package com.lab3.entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,6 +16,7 @@ public class Category {
     private int id;
     private String name;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "category")
     private List<Product> products;
 
