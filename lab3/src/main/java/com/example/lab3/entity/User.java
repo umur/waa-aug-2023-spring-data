@@ -1,10 +1,7 @@
 package com.example.lab3.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -16,8 +13,9 @@ import java.util.List;
 public class User {
 
    @Id
+  // @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
+//@Column(name ="em",unique = true,updatable = false)
     private String email;
     private String password;
     private String firstName;
