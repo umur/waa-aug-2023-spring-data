@@ -23,7 +23,7 @@ public class User {
     String password;
 
 
-    @OneToMany(mappedBy = "user")
+    @OneToMany(mappedBy = "user", cascade=CascadeType.ALL)
     @JsonBackReference
     List<Review> reviews;
 
